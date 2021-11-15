@@ -10,6 +10,11 @@ class DobelyList:
         self.__head = None
         self.__tail = None
         self.count = 0
+        self.__author = 'Shahin'
+
+    def getTail(self): return self.__tail
+    def getHead(self): return self.__head
+    def authorName(self): return self.__author
 
     def lengthOfList(self): return self.count
 
@@ -53,7 +58,9 @@ class DobelyList:
             self.count += 1
 
     def print_list(self):
-
+        if self.__head is None:
+            print("Empty List")
+            return
         temp = self.__head
 
         while temp is not None:
@@ -91,16 +98,16 @@ class DobelyList:
             del temp
 
 
-db = DobelyList()
-db.insert(10)
-db.insert(100)
-db.insert(1000)
-db.insert(10000)
-db.print_list()
-db.deleteAtPosition(3)
-db.deleteAtPosition(3)
-# db.deleteFirst()
-# db.deleteFirst()
-print('-------------')
-# db.insert(5000)
-db.print_list()
+# db = DobelyList()
+# db.insert(10)
+# db.insert(100)
+# db.insert(1000)
+# db.insert(10000)
+# db.print_list()
+# db.deleteAtPosition(3)
+# db.deleteAtPosition(3)
+# # db.deleteFirst()
+# # db.deleteFirst()
+# print('-------------')
+# # db.insert(5000)
+# db.print_list()
