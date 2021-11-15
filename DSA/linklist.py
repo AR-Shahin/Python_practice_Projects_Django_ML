@@ -63,22 +63,44 @@ class DobelyList:
     def deleteFirst(self):
         temp = self.__head
         self.__head = temp.next
-        temp.next = None
+        # temp.next = None
         self.count -= 1
+        del temp
 
     def deleteLast(self):
         temp = self.__tail
         self.__tail = self.__tail.prev
         self.__tail.next = None
         self.count -= 1
+        del temp
+
+    def deleteAtPosition(self, pos):
+        if pos == 1:
+            self.deleteFirst()
+        elif pos == self.lengthOfList():
+            self.deleteLast()
+        else:
+            index = 1
+            temp = self.__head
+            while pos > index:
+                index += 1
+                temp = temp.next
+            temp.prev.next == temp.next
+            temp.next.prev = temp.prev
+            self.count -= 1
+            del temp
 
 
 db = DobelyList()
 db.insert(10)
 db.insert(100)
 db.insert(1000)
+db.insert(10000)
 db.print_list()
-db.deleteLast()
+db.deleteAtPosition(3)
+db.deleteAtPosition(3)
+# db.deleteFirst()
+# db.deleteFirst()
 print('-------------')
-db.insert(5000)
+# db.insert(5000)
 db.print_list()
