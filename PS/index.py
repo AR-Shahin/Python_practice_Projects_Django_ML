@@ -1,18 +1,47 @@
 
 
-N = [4, 3, 2, 1]
+class Solution(object):
+    def missingNumber(self, nums):
+        nums.sort()
+        l = len(nums)
+        list = []
+        for i in range(0, l + 1):
+            list.append(i)
 
-n = int(''.join(str(i) for i in N))
-n += 1
-list = []
-while n != 0:
-    t = n % 10
-    list.append(t)
-    n = n // 10
-list.reverse()
-# print(list)
+        for i in range(0, len(list)):
+            if not self.binary_search(nums, list[i]):
+                return list[i]
 
-a = ['shain', 'omi', 'ii']
+    # def linear_search(self, arr, num):
+    #     for i in range(0, len(arr)):
+    #         if arr[i] == num:
+    #             return True
+    #     return False
 
-x = "-".join(a)
-print(a[0])
+    def binary_search(self, arr, x):
+        low = 0
+        high = len(arr) - 1
+        mid = 0
+
+        while low <= high:
+
+            mid = (high + low) // 2
+
+            # If x is greater, ignore left half
+            if arr[mid] < x:
+                low = mid + 1
+
+            # If x is smaller, ignore right half
+            elif arr[mid] > x:
+                high = mid - 1
+
+            # means x is present at mid
+            else:
+                return True
+
+        # If we reach here, then the element was not present
+        return False
+
+
+s = Solution()
+s.missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])
