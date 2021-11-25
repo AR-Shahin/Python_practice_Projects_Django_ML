@@ -28,8 +28,8 @@ def quick_sort(arr, lb, ub):
         quick_sort(arr, loc+1, ub)
 
 
-arr = [5, 1, 200, 15, 10, 9, 6, -1]
-n = len(arr) - 1
-quick_sort(arr, 0, n)
+# arr = [5, 1, 200, 15, 10, 9, 6, -1]
+# n = len(arr) - 1
+# quick_sort(arr, 0, n)
 
-print(arr)
+# print(arr)
