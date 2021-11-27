@@ -13,14 +13,15 @@ def selection_sort(arr, mode='asc'):
                     min_index = j
 
         if i != min_index:
-            temp = arr[i]
-            arr[i] = arr[min_index]
-            arr[min_index] = temp
+            arr[i], arr[min_index] = arr[min_index], arr[i]
+            # temp = arr[i]
+            # arr[i] = arr[min_index]
+            # arr[min_index] = temp
     print(arr)
 
 
 arr = [10, 10, 15, 16, 45, 9, 2, 1, 50]
 
-selection_sort(arr, 'dsc')
+selection_sort(arr, 'asc')
 
 # print(arr)
