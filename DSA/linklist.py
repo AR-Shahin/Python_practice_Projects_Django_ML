@@ -32,12 +32,15 @@ class DobelyList:
             self.count += 1
 
     def insertFirst(self, data):
-        newNode = Node(data)
-        temp = self.__head
-        temp.prev = newNode
-        newNode.next = temp
-        self.__head = newNode
-        self.count += 1
+        if self.__head is None:
+            self.insert(data)
+        else:
+            newNode = Node(data)
+            temp = self.__head
+            temp.prev = newNode
+            newNode.next = temp
+            self.__head = newNode
+            self.count += 1
 
     def insertAtPosition(self, pos, data):
         if(pos == 1):
@@ -64,8 +67,9 @@ class DobelyList:
         temp = self.__head
 
         while temp is not None:
-            print(temp.data)
+            print(temp.data, end=" ")
             temp = temp.next
+        print()
 
     def deleteFirst(self):
         temp = self.__head
@@ -98,12 +102,14 @@ class DobelyList:
             del temp
 
 
-# db = DobelyList()
-# db.insert(10)
-# db.insert(100)
+db = DobelyList()
+db.insertFirst(10)
+db.insertFirst(100)
+db.insertFirst(1000)
+db.insert(500)
 # db.insert(1000)
 # db.insert(10000)
-# db.print_list()
+db.print_list()
 # db.deleteAtPosition(3)
 # db.deleteAtPosition(3)
 # # db.deleteFirst()

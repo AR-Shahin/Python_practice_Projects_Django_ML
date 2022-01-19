@@ -70,6 +70,6 @@ graph = Graph(nodes)
 # graph.add_edge("A", "B")
 # graph.add_edge("A", "C")
 graph.add_multiple_edges(edges)
-graph.print_adj_list()
+# graph.print_adj_list()
 
-# print(graph.degree_of_node("A"))
+print(graph.degree_of_node("A"))
