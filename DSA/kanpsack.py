@@ -1,10 +1,13 @@
 
 
+from audioop import reverse
+
+
 def knapsack(list, weight=50):
     for item in list:
         item.insert(0, item[0]/item[1])
-    list.sort()
-    list.reverse()
+    list.sort(reverse=True)
+
     profit = 0
     for i in range(0, len(list)):
         if weight >= list[i][2]:
