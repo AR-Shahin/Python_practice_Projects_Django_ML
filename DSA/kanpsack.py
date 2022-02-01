@@ -1,7 +1,5 @@
 
 
-from audioop import reverse
-
 
 def knapsack(list, weight=50):
     for item in list:
