@@ -1,0 +1,38 @@
+{% extends "crud/base.html" %}
+
+{% block title %}
+Todo | {{ todo }}
+{% endblock title %}
+
+{% block content %}
+<div class="col-md-8">
+    <div class="d-flex justify-content-between">
+        <div>
+            <h2>Single Todo</h2>
+        </div>
+        <div class="align-self-center">
+            <a href="{% url 'crud.index' %}" class="btn btn-sm btn-success">Back</a> 
+        </div>
+    </div>
+    <hr>
+    <table class="table table-bordered text-center">
+        <tr>
+            <th>Title</th>
+            <td>{{ todo.title }}</td>
+        </tr>
+        <tr>
+            <th>Image</th>
+            <td>{{ todo.title }}</td>
+        </tr>
+
+        <tr>
+            <th>Status</th>
+            <td>{{ todo.status }}</td>
+        </tr>
+        <tr>
+            <th>Created At</th>
+            <td>{{ todo.created_at }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock content %}
