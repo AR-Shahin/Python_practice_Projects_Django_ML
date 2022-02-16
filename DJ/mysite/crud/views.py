@@ -54,3 +54,7 @@ def update(request, id):
     messages.success(request, 'Data Updated successful')
 
     return redirect('crud.view', id)
+
+
+def test(request):
+    return render(request, 'base.html')
