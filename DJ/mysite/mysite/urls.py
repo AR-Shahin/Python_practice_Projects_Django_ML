@@ -10,4 +10,5 @@ urlpatterns = [
     path('crud/', include('crud.urls')),
     path('', include('blog.urls')),
     path('polls/', include('polls.urls')),
+    path('backend/', include('backend.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

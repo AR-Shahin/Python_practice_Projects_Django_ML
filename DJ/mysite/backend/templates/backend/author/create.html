@@ -1,0 +1,46 @@
+{% extends "../layouts/master.html" %}
+
+{% block title %}
+  Author Create
+{% endblock title %}
+
+
+{% block content %}
+<div class="d-flex justify-content-between">
+    <h1>Create Author</h1>
+    <div>
+        <a href="{% url 'backend.authors'%}" class="btn btn-sm btn-success"><i class="fa fa-angle-left mr-2"></i>Back</a>
+    </div>
+</div> 
+
+  <div class="card">
+      <div class="card-body">
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                <form action="{% url 'backend.authors.store'%}" method="POST">
+                    {% csrf_token %}
+                    <div class="my-2 ">
+                        <label for=""><b>Name : </b></label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                    </div>
+                    <div class="my-2">
+                        <label for=""><b>Email : </b></label>
+                        <input type="email" class="form-control" name="email" placeholder="Enter email">
+                    </div>
+                    <div class="my-2">
+                        <label for=""><b>Password : </b></label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                    </div>
+                    <div class="my-2">
+                        <label for=""><b>Image : </b></label>
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                    <div class="my-2">
+                        <button class="btn btn-block btn-success">Submit</button>
+                    </div>
+                </form>
+                </div>
+          </div>
+      </div>
+  </div>
+{% endblock content %}
