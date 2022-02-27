@@ -1,0 +1,12 @@
+ML Project List
+
+Sentiment Analysis/Emotion Detection
+Movie Recommendation
+Email Spam Detection
+Music generation
+Human activity recognition
+Face Recognition and clustering
+Build Chatbots
+Object Detection (Self Driving Cars)
+Fake News Detection
+Hand-written Digit Classification
