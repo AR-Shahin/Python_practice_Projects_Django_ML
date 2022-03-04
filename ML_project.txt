@@ -1,9 +1,9 @@
 ML Project List
 
 Sentiment Analysis/Emotion Detection
-Movie Recommendation
+Movie Recommendation/ Ecommerce Product Recommendation
 Email Spam Detection
-Music generation
+Mus9ic generation
 Human activity recognition
 Face Recognition and clustering
 Build Chatbots

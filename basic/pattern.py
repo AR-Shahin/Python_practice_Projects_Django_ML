@@ -1,11 +1,20 @@
-n = 5
 
-for i in range(1, n+1):
-    sum = 0
-    for j in range(1, i+1):
-        sum += 1
-        if j < 2 or i == sum or i == n:
-            print(j, end=" ")
-        else:
-            print(" ", end=" ")
-    print()
+
+dic = {
+    True: 1
+}
+
+# print(dic[True])
+
+x = [1, 2, 3]
+(a, b, c) = x
+# print(a)
+
+
+def fun(*args):
+    print(sum(args))
+
+
+# fun(1, 2, 3)
+
+def p(a, b): return a*b

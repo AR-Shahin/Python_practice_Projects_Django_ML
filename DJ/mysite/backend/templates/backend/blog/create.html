@@ -1,0 +1,51 @@
+{% extends "../layouts/master.html" %}
+
+{% block title %}
+  Blog Create
+{% endblock title %}
+
+
+{% block content %}
+<div class="d-flex justify-content-between">
+    <h1>Create Blog</h1>
+    <div>
+        <a href="{% url 'backend.blogs'%}" class="btn btn-sm btn-success"><i class="fa fa-angle-left mr-2"></i>Back</a>
+    </div>
+</div> 
+
+  <div class="card">
+      <div class="card-body">
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                <form action="{% url 'backend.blogs.store'%}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="my-2 ">
+                        <label for=""><b>Name : </b></label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                    </div>
+                    <div class="my-2">
+                        <label for=""><b>Author : </b></label>
+                        <select name="author" id="" class="form-control">
+                            <option value="">Select An Author</option>
+                            {% for author in  authors%}
+                            <option value="{{ author }}">{{ author.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="my-2">
+                        <label for=""><b>Image : </b></label>
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                    <div class="my-2">
+                        <label for=""><b>Description : </b></label>
+                        <textarea name="description" id="" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="my-2">
+                        <button class="btn btn-block btn-success">Submit</button>
+                    </div>
+                </form>
+                </div>
+          </div>
+      </div>
+  </div>
+{% endblock content %}
